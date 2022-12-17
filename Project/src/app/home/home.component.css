@@ -1,0 +1,16 @@
+.brd
+{
+    width: 30%;
+    height: 1px;
+    background-color: aqua;
+}
+.brd-brd
+{
+    width: 90%;
+    height: 1px;
+    background-color: aqua;
+}
+img
+{
+    cursor: pointer;
+}

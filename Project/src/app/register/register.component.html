@@ -1,0 +1,61 @@
+
+    <h3 class="text-center text-info">Register </h3>
+<form class="w-75 mx-auto  text-white vh-100"(ngSubmit)='registerMethod(registerForm)' [formGroup]="registerForm">
+    
+ <div class="">
+    <label for="" class="mb-2 text-info">First_Name</label>
+    <input formControlName="first_name"  class="form-control">
+   <div *ngIf="registerForm.get('first_name')?.errors &&  registerForm.get('first_name')?.touched">
+      <p *ngIf="registerForm.get('first_name')?.getError('required')"  class="alert alert-danger">required</p>
+   </div>
+</div>
+
+   
+ <div class="">
+    <label for="" class="mb-2 text-info">Last_Name</label>
+    <input formControlName="last_name"  class="  form-control">
+    <div *ngIf="registerForm.get('last_name')?.errors &&  registerForm.get('last_name')?.touched">
+      <p *ngIf="registerForm.get('last_name')?.getError('required')"  class="alert alert-danger">required</p>
+   </div>
+ </div>
+
+
+ <div class="">
+    <label  class="mb-2 text-info">Email</label>
+    <input formControlName="email"  class="form-control">
+    <div *ngIf="registerForm.get('email')?.errors &&  registerForm.get('email')?.touched">
+      <p *ngIf="registerForm.get('email')?.getError('required')"  class="alert alert-danger">required</p>
+   </div>
+ </div>
+
+
+ <div class="">
+    <label for="" class="mb-2 text-info">Password</label>
+    <input formControlName="password"  class="  form-control">
+    <div *ngIf="registerForm.get('password')?.errors &&  registerForm.get('password')?.touched">
+      <p *ngIf="registerForm.get('password')?.getError('required')"  class="alert alert-danger">required</p>
+   </div>
+ </div>
+
+
+ 
+ <div class="">
+    <label for="" class="mb-2 text-info">Age</label>
+    <input formControlName="age"  class="mb-2  form-control">
+    <div *ngIf="registerForm.get('age')?.errors &&  registerForm.get('age')?.touched">
+      <p *ngIf="registerForm.get('age')?.getError('required')"  class="alert alert-danger">required</p>
+   </div>
+ </div>
+ <div *ngIf="registerErrorMessage" class="alert alert-danger">
+   <p>{{registerErrorMessage}}</p>
+ </div>
+      
+
+    <button [disabled]='registerForm.invalid' class="btn btn-info mt-3">Register</button>
+
+ 
+ <!-- [disabled]='registerForm.invalid' -->
+ 
+   
+</form>
+

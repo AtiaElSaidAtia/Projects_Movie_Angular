@@ -1,0 +1,21 @@
+<div class="container"> 
+     <div class="row">
+            <div class="col-md-5">
+                <img class="img-fluid" [src]="imgPath+mmovie.poster_path" alt="">
+            </div>
+            <div class="col-md-7 py-5">
+                <h3>{{mmovie.title}}</h3>
+                <p>{{mmovie.tagline}}</p>
+
+                <span class="cat">{{mmovie.genres[0].name}}</span>
+                <span class="cat">{{mmovie.genres[1].name}}</span>
+                <span class="cat">{{mmovie.genres[2].name}}</span>
+
+                <p>{{mmovie.vote_count}}</p>
+                <p>{{mmovie.vote_average}}</p>
+                <p>{{mmovie.release_date}}</p>
+                <p>{{mmovie.overview}}</p>
+
+            </div>
+     </div> 
+</div>

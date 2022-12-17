@@ -1,0 +1,34 @@
+
+    <h3 class="text-center text-info">Login </h3>
+    <form class="w-75 mx-auto  text-white vh-100"(ngSubmit)='loginMethod(loginForm)' [formGroup]="loginForm">
+    
+     <div class="">
+        <label  class="mb-2 text-info">Email</label>
+        <input formControlName="email"  class="form-control">
+        <div *ngIf="loginForm.get('email')?.errors &&  loginForm.get('email')?.touched">
+          <p *ngIf="loginForm.get('email')?.getError('required')"  class="alert alert-danger">required</p>
+       </div>
+     </div>
+
+     <div class="">
+        <label for="" class="mb-2 text-info">PassWord</label>
+        <input formControlName="password"  class="  form-control">
+        <div *ngIf="loginForm.get('password')?.errors &&  loginForm.get('password')?.touched">
+          <p *ngIf="loginForm.get('password')?.getError('required')"  class="alert alert-danger">required</p>
+       </div>
+     </div>
+    
+     <div *ngIf="loginErrorMessage" class="alert alert-danger">
+       <p>{{loginErrorMessage}}</p>
+     </div>
+          
+    
+        <button [disabled]='loginForm.invalid' class="btn btn-info mt-3">Register</button>
+    
+     
+     <!-- [disabled]='registerForm.invalid' -->
+     
+       
+    </form>
+    
+    

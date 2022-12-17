@@ -1,0 +1,66 @@
+<div class="container ">
+
+    <input [(ngModel)]="userWord"  class="form-control w-50 mx-auto mb-2" placeholder="Search " >
+    
+    <nav aria-label="... w-25 ms-auto">
+        <ul class="pagination w-25 m-auto">
+          
+          <li (click)="getPageData(i+1)" *ngFor="let x of page ; let i=index "  class="page-item">
+            <a class="page-link" >{{i+1}}</a>
+          </li>
+        
+          
+        
+        </ul>
+      </nav>
+
+
+    <div class="row">
+        <div class="col-md-4 bg-white ">
+           <div>
+            <div class="brd my-3"></div>
+            <h4>Trending</h4>
+            <h5>Movie</h5>
+            <p>The Watch Naw</p>
+            <div class="brd-brd mb-2"></div>
+           </div>
+        </div>
+        <div *ngFor="let theMovie of movie |search:userWord " class="col-md-2">
+            <div class="position-relative">
+                <span class="bg-info position-absolute top-0 end-0">{{theMovie.vote_average}}</span>
+                    <img [routerLink]="['/moviedetails' , theMovie.id ]" class="img-fluid" [src]="imgPath+theMovie.poster_path" alt="">
+                    <p>{{theMovie.title}}</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-4 bg-white">
+           <div>
+            <div class="brd my-3"></div>
+            <h4>Trending</h4>
+            <h5>Tv</h5>
+            <p>The Watch Naw</p>
+            <div class="brd-brd mb-2"></div>
+           </div>
+           
+        </div>
+        <div *ngFor="let theTv of tvs" class="col-md-2">
+            <div class="position-relative">
+                <span class="bg-info position-absolute top-0 end-0">{{theTv.vote_average}}</span>
+                    <img  class="img-fluid" [src]="imgPath+theTv.poster_path" alt="">
+                    <p>{{theTv.name}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
